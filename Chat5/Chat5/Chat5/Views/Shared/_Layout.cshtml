@@ -1,0 +1,51 @@
+﻿﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CustomIdentity</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/chatSite.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/boxicons/css/boxicons.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/AlertifyJS/css/alertify.css" />
+    <link rel="stylesheet" href="~/lib/AlertifyJS/css/themes/default.css" />
+   
+  </head>
+<body>
+    <header>
+        <div class="nav_parent">
+            <div class="nav_parent_item">
+                <div class="nav_parent_item_imgContainer">
+                    <img src="~/lib/upload/chat_image.png" alt="Chat img" />
+                    <p>CHAT TEST</p>
+                </div>
+            </div>
+
+            <div class="nav_parent_item"></div>
+            <div class="nav_parent_item">                       
+                <partial name="_PartialLogin" />
+            </div>
+        </div>
+
+    </header>
+    <div class="body_container">
+        @RenderBody()
+    </div>
+    <script src="~/lib/microsoft-signalr/signalr.js" asp-append-version="true"> </script>
+    <script src="~/lib/alertifyJS/alertify.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/chatSiteService.js"></script>
+    <script src="~/js/chatSiteController.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+    <script>
+        $(document).ready(function () {
+            $(".dropdown-toggle").dropdown();
+            ChatSiteController.init();
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿@model List<GroupMember>
+
+@{
+	if(Model.Count > 0)
+	{
+		<ul class="left-panel-conversations-list" style=" overflow:hidden; overflow-y:scroll;">
+			@{
+				if (Model != null)
+				{
+					foreach (var x in Model)
+					{
+						<li>
+							<i class='bx bxs-user'></i>
+							<a class="conversationItem" data-conversationId="@x.Conversation.ConversationId">@x.Conversation.ConversationName</a>
+						</li>
+					}
+				}
+			}
+		</ul>
+
+
+	}
+	else
+	{
+		<p class="searchConversation-notFound"> Brak danych</p>
+	}
+}
+

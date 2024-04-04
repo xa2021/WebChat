@@ -1,0 +1,70 @@
+﻿
+<div class="parent">
+	<div class="left-panel-conversations list-group overflow-auto">
+
+
+		<ul class="left-panel-conversations-list" style=" overflow:hidden; overflow-y:scroll;">
+			@{
+				if (Model != null)
+				{
+					foreach (var x in Model)
+					{
+						<li>
+							<i class='bx bxs-user'></i>
+							<a class="conversationItem" data-conversationId="@x.Conversation.ConversationId">@x.Conversation.ConversationName</a>
+						</li>
+					}
+				}
+			}
+		</ul>
+	</div>
+	<div class="right-panel-conversations list-group overflow-auto">
+	</div>
+	<div class="left-top-panel-conversations">
+		<div class="add-conversation">
+			<a><i class='bx bx-user-plus'></i></a>
+		</div>
+		<div class="search-conversation">			
+			<input autocomplete="off" type="text" class="form-control search-conversation-input" placeholder="Szukaj ...">
+		</div>
+		
+	</div>
+	<div class="right-top-panel-conversations"> 
+		<div class="right-top-panel-conversations-names">
+
+		</div>
+		<div class="right-top-panel-conversations-dots">
+			<i class='bx bx-dots-vertical-rounded'></i>
+		</div>
+
+	</div>
+
+	<div class="right-bottom-text">
+
+		<div class="input-group">
+			<input autocomplete="off" type="text" class="form-control right-bottom-text-messageInput" placeholder="Napisz ..." aria-label="Message" aria-describedby="basic-addon1">
+			<span class="input-group-text right-bottom-text-messageSendMessaage" id="basic-addon1"> <i class='bx bxs-send'></i></span>
+		</div>
+
+
+	</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h1 class="modal-title fs-5" id="exampleModalLabel">Wybierz rozmówcę i podaj nazwę konwersacji</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body modal-contacts-list">
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
+				<button type="button" class="btn btn-primary modal-contacts-list-accept ">Dodaj Chat</button>
+			</div>
+		</div>
+	</div>
+</div>
+

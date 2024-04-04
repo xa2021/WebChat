@@ -1,0 +1,22 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "boxicons@2.1.4",
+      "destination": "wwwroot/lib/boxicons/"
+    },
+    {
+      "library": "alertify.js@0.3.11",
+      "destination": "wwwroot/lib/alertify.js/"
+    },
+    {
+      "library": "AlertifyJS@1.13.1",
+      "destination": "wwwroot/lib/AlertifyJS/"
+    },
+    {
+      "library": "microsoft-signalr@7.0.2",
+      "destination": "wwwroot/lib/microsoft-signalr/"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+﻿@model List<Contact> 
+
+@{
+
+	if(Model.Count() > 0)
+	{
+		<ul class="list-group">
+			@{
+				foreach(var item in Model)
+				{
+					<li class="list-group-item" >
+						<input class="form-check-input form-switch me-1 modal-contact-elementsList" data-contactId="@item.ContactId" type="checkbox" value="" id="checkbox">
+						<label class="form-check-label" for="checkbox">@(item.FirstName + " " + item.LastName)  </label>
+					</li>
+					
+				}
+				}			
+		</ul>
+		<hr />
+		<label for="exampleInputConvName" class="form-label">Podaj nazwę</label>
+		<input type="text" class="form-control modal-contact-elementInput" id="exampleInputConvName">
+	}
+	else
+	{
+		<p>
+		  Brak Kontaktów
+		</p>
+	}
+
+
+}

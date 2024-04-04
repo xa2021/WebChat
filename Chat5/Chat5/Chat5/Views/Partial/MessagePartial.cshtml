@@ -1,0 +1,63 @@
+﻿@model Chat5.CQRS.Partial.Queries.GetMessagesResponse;
+
+@{
+
+    if(Model.Messages.Count() > 0)
+     {        
+       <div class="messages-container">
+            <ul>     
+            
+                @{
+                    foreach(var element in Model.Messages)
+                    {
+                        if(element.From.ToString() != Model.CurrentLogUser.ToString())
+                        {
+                            <li class="left">
+                                <div class="message-left-container">
+                                    <div>
+                                        <i class='bx bxs-user'></i>
+                                    </div>
+                                    <div class="chat-window">
+                                        <p class="chat-name"> @element.Name</p>
+                                        <p class="chat-window-message">
+                                            @element.Text
+                                        </p>
+                                        <p class="chat-date"> @element.SentDateTime </p>
+                                    </div>
+                                </div>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="right">
+                                <div class="message-right-container">
+                                    <div>
+                                        <i class='bx bxs-user'></i>
+                                    </div>
+                                    <div class="chat-right-window">
+                                        <p class="chat-right-name"> @element.Name</p>
+                                        <p class="chat-right-window-message">
+                                            @element.Text
+                                        </p>
+                                        <p class="chat-right-date"> @element.SentDateTime</p>
+                                    </div>
+                                </div>
+                            </li>
+                        }
+                    }
+                  }            
+            </ul>       
+       </div>      
+    }
+    else
+    {
+       <div class="message-right-container-empty">
+        <p> Brak konwersacji</p>
+        <p>Napisz wiadomość !</p>
+       </div>
+    }     
+
+
+}
+
+
